@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/list_stuname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="李明"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:id="@+id/list_stuid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="20194000"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/list_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2021年03月05日 16:34"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体温："
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"></TextView>
+            <TextView android:id="@+id/list_wendu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="36.2"
+                android:textSize="20dp"></TextView>
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/list_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="河北省衡水市武邑县祥云小区"
+            android:textSize="20dp"></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="特殊情况："
+                android:textSize="20dp"></TextView>
+            <TextView android:id="@+id/list_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="居住地异动"
+                android:textSize="20dp"></TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

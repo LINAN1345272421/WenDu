@@ -31,7 +31,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="查询"
-                android:onClick="queryWenDate"></Button>
+                android:textSize="20dp"
+                android:background="@drawable/shap"
+                android:onClick="queryWenDate"
+                android:radius="100dip"></Button>
         </LinearLayout>
 
         <ListView android:id="@+id/query_list"

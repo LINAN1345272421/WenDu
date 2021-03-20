@@ -196,4 +196,11 @@ public class MainActivity extends AppCompatActivity {
         intent1.putExtra("stuid", intent.getStringExtra("stuid"));
         startActivity(intent1);
     }
+    public void toMap(View view){
+        Intent intent1=new Intent();
+        intent=getIntent();
+        intent1.setClass(MainActivity.this,MapActivity.class);
+        intent1.putExtra("stuid", intent.getStringExtra("stuid"));
+        startActivity(intent1);
+    }
 }

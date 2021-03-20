@@ -103,16 +103,16 @@
                 android:id="@+id/main_insert"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="#66ffff"
                 android:onClick="insertDB"
                 android:text="添加"
                 android:textColor="#cc00"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@drawable/shap"/>
             <Button
                 android:id="@+id/main_query"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="#66ffff"
+                android:background="@drawable/shap"
                 android:text="查询"
                 android:textColor="#cc00"
                 android:textSize="20sp"
@@ -122,23 +122,46 @@
                 android:id="@+id/main_situation"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="#66ffff"
+                android:background="@drawable/shap"
                 android:text="统计"
                 android:textColor="#cc00"
                 android:textSize="20sp"
                 android:onClick="situationWendu"
                 android:layout_marginLeft="10dp"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/main_form"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:background="#66ffff"
+                android:background="@drawable/shap"
                 android:text="健康表"
                 android:textColor="#cc00"
                 android:textSize="20sp"
-                android:onClick="toForm"
-                android:layout_marginLeft="10dp"/>
+                android:onClick="toForm" />
+
+            <Button android:id="@+id/main_tomap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图表显示"
+                android:textSize="18dp"
+                android:textColor="#cc00"
+                android:background="@drawable/shap"
+                android:onClick="toMap"
+                android:layout_marginLeft="10dp"></Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         </LinearLayout>
 
@@ -154,12 +177,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"></TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView android:id="@+id/main_un_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -168,12 +185,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"></TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView android:id="@+id/main_no_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,14 +195,26 @@
                 android:textSize="20dp"></TextView>
         </LinearLayout>
 
-        <TextView android:id="@+id/main_sate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"></TextView>
-        <TextView android:id="@+id/main_sate_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
+            <TextView android:id="@+id/main_sate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"></TextView>
+            <TextView android:id="@+id/main_sate_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     </LinearLayout>
 
 </RelativeLayout>

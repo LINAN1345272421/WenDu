@@ -33,6 +33,7 @@ public class RegActivity extends AppCompatActivity {
                 text_reg_stuid.getText().toString(),
                 text_reg_stuname.getText().toString(),
                 text_reg_stuphone.getText().toString() );
+
         studao=new StuDao(this,stuDate);
         long flag=studao.insertDB();
         if(flag>0){

@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -45,6 +47,8 @@ public class FormActivity extends AppCompatActivity {
     private TextView form_wendu;
     private TextView form_phone;
     private ListView form_list;
+    private EditText show_stuid;
+    private TextView show_show;
     private  final int REQUEST_EXTERNAL_STORAGE = 1;
     private  String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -55,40 +59,20 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.show);
         Intent intent=getIntent();
         String stuid=intent.getStringExtra("stuid");
+        show_stuid=(EditText)findViewById(R.id.show_stuid);
+        show_stuid.setText(stuid);
+    }
+    public void startForm(View view){
+        show_stuid=(EditText)findViewById(R.id.show_stuid);
+        show_show=(TextView)findViewById(R.id.show_show);
+        String stuid=show_stuid.getText().toString();
         stuDao=new StuDao(this);
         liststudate=stuDao.queryData("stuid",stuid);
         stuDate=liststudate.get(0);
         wenDao=new WenDao(this);
         listwendate=wenDao.queryDataFor("stuid",stuid);
         wenDate=listwendate.get(0);
-        /*
-        form_time=(TextView)findViewById(R.id.form_time);
-        form_name=(TextView)findViewById(R.id.form_name);
-        form_phone=(TextView)findViewById(R.id.form_phone);
-        form_stuid=(TextView)findViewById(R.id.form_stuid);
-        form_wendu=(TextView)findViewById(R.id.form_wendu);
-        form_name.setText(listwendate.get(0).getName());
-        form_stuid.setText(listwendate.get(0).getStuid());
-        form_phone.setText(stuDate.getStuPhone());
-        if(listwendate.get(0).getWendu()<37){
-            form_wendu.setText("良好");
-        }else{
-            form_wendu.setText("发热");
-        }
-        String[] date=listwendate.get(0).getDateandtime().split(" ");
-        form_time.setText(date[0]);;*/
         try {
-// 在path路径下建立一bai个excel文件
-//            File extDir = Environment.getExternalStorageDirectory();
-//            File file=new File( extDir.getAbsolutePath() + extDir.pathSeparatorChar +"\\test222.txt");
-//            if (!file.exists()) {
-//                try {
-//                    verifyStoragePermissions(this);
-//                    file.createNewFile();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
             System.out.println(Environment.getExternalStorageDirectory());
             Workbook wb=Workbook.getWorkbook(new File("/storage/emulated/0/$MuMu共享文件夹/excel1.xls"));
             WritableWorkbook wbook = wb.createWorkbook(new File("/storage/emulated/0/$MuMu共享文件夹/excel1.xls"),wb);
@@ -132,6 +116,7 @@ public class FormActivity extends AppCompatActivity {
 // 写入文件
             wbook.write();
             wbook.close();
+            show_show.setText("14天健康表生成成功！");
             System.out.println("创建成功!");
         } catch (Exception e) {
 // TODO: handle exception
@@ -147,5 +132,34 @@ public class FormActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE,
                     REQUEST_EXTERNAL_STORAGE);
         }
+    }
+    public void Null(){
+                /*
+        form_time=(TextView)findViewById(R.id.form_time);
+        form_name=(TextView)findViewById(R.id.form_name);
+        form_phone=(TextView)findViewById(R.id.form_phone);
+        form_stuid=(TextView)findViewById(R.id.form_stuid);
+        form_wendu=(TextView)findViewById(R.id.form_wendu);
+        form_name.setText(listwendate.get(0).getName());
+        form_stuid.setText(listwendate.get(0).getStuid());
+        form_phone.setText(stuDate.getStuPhone());
+        if(listwendate.get(0).getWendu()<37){
+            form_wendu.setText("良好");
+        }else{
+            form_wendu.setText("发热");
+        }
+        String[] date=listwendate.get(0).getDateandtime().split(" ");
+        form_time.setText(date[0]);;*/
+        // 在path路径下建立一bai个excel文件
+//            File extDir = Environment.getExternalStorageDirectory();
+//            File file=new File( extDir.getAbsolutePath() + extDir.pathSeparatorChar +"\\test222.txt");
+//            if (!file.exists()) {
+//                try {
+//                    verifyStoragePermissions(this);
+//                    file.createNewFile();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
     }
 }

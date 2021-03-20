@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="登录"
             android:textSize="30dp"
+            android:background="@drawable/shap"
             android:onClick="onClickSign_sign">
         </Button>
 
@@ -57,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="注册"
             android:textSize="30dp"
+            android:background="@drawable/shap"
             android:onClick="onClickSign_reg"></Button>
 
     </LinearLayout>

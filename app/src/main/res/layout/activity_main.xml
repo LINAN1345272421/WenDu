@@ -156,6 +156,16 @@
                 android:onClick="toMap"
                 android:layout_marginLeft="10dp"></Button>
 
+            <Button android:id="@+id/main_Map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图显示"
+                android:textSize="18dp"
+                android:textColor="#cc00"
+                android:background="@drawable/shap"
+                android:onClick="toMapshow"
+                android:layout_marginLeft="10dp"></Button>
+
         </LinearLayout>
 
         <LinearLayout
